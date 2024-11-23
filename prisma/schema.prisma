@@ -1,0 +1,68 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["omitApi"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Artist {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  bio       String?
+  imageUrl  String?
+  albums    Album[]
+  songs     Song[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Genre {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String   @unique
+  songs     Song[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Album {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  releaseDate DateTime
+  coverUrl    String?
+  artistId    String   @db.ObjectId
+  artist      Artist   @relation(fields: [artistId], references: [id])
+  songs       Song[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Song {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  duration    Int // Duration in seconds
+  trackNumber Int?
+  audioUrl    String
+  albumId     String     @db.ObjectId
+  artistId    String     @db.ObjectId
+  genreId     String     @db.ObjectId
+  album       Album      @relation(fields: [albumId], references: [id])
+  artist      Artist     @relation(fields: [artistId], references: [id])
+  genre       Genre      @relation(fields: [genreId], references: [id])
+  playlistIDs String[]   @db.ObjectId
+  playlists   Playlist[] @relation(fields: [playlistIDs], references: [id])
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Playlist {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String?
+  songIDs     String[] @db.ObjectId
+  songs       Song[]   @relation(fields: [songIDs], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

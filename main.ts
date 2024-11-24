@@ -6,8 +6,8 @@ import cors from 'cors';
 
 import { PublicUser } from './types/PublicUser.type';
 import { globalErrorHandler } from './middlewares/error.middleware';
-// import appRouter from './app/app.route';
-import './utils/OError';
+import './utils/appError.util';
+import appRouter from './app/app.route';
 import { limiter } from './middlewares/limiter.middleware';
 
 const app = express();
@@ -34,7 +34,7 @@ app.get('/ping', async (_, res) => {
   res.send('Pong!');
 });
 
-// app.use('/api', appRouter);
+app.use('/api', appRouter);
 app.use(globalErrorHandler);
 
 const EXPRESS_PORT = process.env.PORT || 3000;
@@ -56,10 +56,13 @@ declare global {
       user?: PublicUser;
     }
   }
-  var OError: {
-    new (message: string, options?: { path?: string; status?: number }): OError;
+  var AppError: {
+    new (
+      message: string,
+      options?: { path?: string; status?: number },
+    ): AppError;
   };
-  interface OError extends Error {
+  interface AppError extends Error {
     options?: { path?: string; status?: number };
   }
 }

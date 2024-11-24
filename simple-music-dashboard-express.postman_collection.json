@@ -1,0 +1,750 @@
+{
+	"info": {
+		"_postman_id": "171878d2-1b25-434c-927c-ea1a2fde0c5b",
+		"name": "simple-music-dashboard-express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27566103"
+	},
+	"item": [
+		{
+			"name": "artist",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alipe2\",\r\n    \"bio\": \"Thedaas\" // optional\r\n    // \"imageUrl\": \"\" // optional\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/artist",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alipe2\",\r\n    \"bio\": \"Thedaadasds adasd sad sad\" // optional\r\n    // \"imageUrl\": \"\" // optional\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/artist/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artist",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6741ed46c6d804ae5a3b3cf1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/artist/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artist",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6741ed46c6d804ae5a3b3cf1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/artist/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artist",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6741ecafc6d804ae5a3b3cef"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/artist?page=1&limit=12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artist"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "song",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Song 02\",\r\n    \"duration\": 60, // Duration in seconds\r\n    \"trackNumber\": 1, // optional\r\n    \"audioUrl\": \"https://audiofile.mp3\",\r\n    \"albumId\": \"6742c6b585acd5f706912089\",\r\n    \"artistId\": \"6741ecafc6d804ae5a3b3cef\",\r\n    \"genreId\": \"6742c58e85acd5f706912087\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/song",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"song"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Song 02\",\r\n    \"duration\": 60, // Duration in seconds\r\n    \"trackNumber\": 3, // optional\r\n    \"audioUrl\": \"https://audiofile.mp3\",\r\n    \"albumId\": \"6742c6b585acd5f706912089\",\r\n    \"artistId\": \"6741ecafc6d804ae5a3b3cef\",\r\n    \"genreId\": \"6742c58e85acd5f706912087\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/song/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"song",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c72c85acd5f70691208c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/song/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"song",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c72885acd5f70691208b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/song/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"song",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c72c85acd5f70691208c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/song?page=1&limit=12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"song"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "genre",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"POP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/genre",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"genre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"POP2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/genre/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"genre",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c59285acd5f706912088"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/genre/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"genre",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c59285acd5f706912088"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/genre/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"genre",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c59285acd5f706912088"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/genre?page=1&limit=12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"genre"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "album",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"My Alb 2\",\r\n    \"releaseDate\": \"2024-11-23T00:00:00.505Z\",\r\n    \"artistId\": \"6741ecafc6d804ae5a3b3cef\"\r\n    // \"coverUrl\": \"Thedaas\" // optional\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/album",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"My Alb 2 dsd\",\r\n    \"releaseDate\": \"2024-11-23T00:00:00.505Z\",\r\n    \"artistId\": \"6741ecafc6d804ae5a3b3cef\"\r\n    // \"coverUrl\": \"Thedaas\" // optional\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/album/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"album",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c6cb85acd5f70691208a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/album/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"album",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c6cb85acd5f70691208a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/album/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"album",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c6cb85acd5f70691208a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/album?page=1&limit=12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"album"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "playlist",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"playlist 01\",\r\n    \"songIDs\": [\r\n        \"6742c72c85acd5f70691208c\",\r\n        \"6742c72c85acd5f70691208c\"\r\n    ],\r\n    \"description\": \"Thedaas\" // optional\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/playlist",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"playlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"playlist 01\",\r\n    \"songIDs\": [\r\n        \"6742c72c85acd5f70691208c\"\r\n    ],\r\n    \"description\": \"Thedaas\" // optional\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/playlist/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"playlist",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c7e485acd5f70691208e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/playlist/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"playlist",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c7e485acd5f70691208e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/playlist/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"playlist",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6742c7e485acd5f70691208e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/playlist?page=1&limit=12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"playlist"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		}
+	]
+}

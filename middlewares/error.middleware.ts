@@ -11,7 +11,7 @@ export const globalErrorHandler = (
   _next: NextFunction,
 ) => {
   // Handled OError errors
-  if (err instanceof OError) {
+  if (err instanceof AppError) {
     // TODO Add Logger here then remove console
     console.error('Handled errors : globalErrorHandler', err.message);
     const status = err.options

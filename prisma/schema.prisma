@@ -66,3 +66,16 @@ model Playlist {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+model User {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String?
+  githubId        String?
+  email           String?  @unique
+  password        String?
+  profileImageUrl String?
+  refreshToken    String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

@@ -3,15 +3,18 @@ dotenv.config();
 import 'express-async-errors';
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
 import { PublicUser } from './types/PublicUser.type';
 import { globalErrorHandler } from './middlewares/error.middleware';
 import './utils/appError.util';
 import appRouter from './app/app.route';
 import { limiter } from './middlewares/limiter.middleware';
+import passport from './config/passport.config';
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 // app.set('trust proxy', true);
 
 const whitelist = process.env.WHITELISTED_DOMAINS
@@ -26,6 +29,7 @@ app.use(
   }),
 );
 app.use(limiter);
+app.use(passport.initialize());
 
 app.get('/', async (_, res) => {
   res.send('Hello World');
@@ -52,9 +56,7 @@ start();
 
 declare global {
   namespace Express {
-    interface Request {
-      user?: PublicUser;
-    }
+    interface User extends PublicUser {}
   }
   var AppError: {
     new (

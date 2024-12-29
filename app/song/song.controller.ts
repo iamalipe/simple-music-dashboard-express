@@ -94,10 +94,17 @@ const getAllController = async (req: Request, res: Response) => {
   const page = parseInt(query.page as unknown as string, 10);
   const skip = (page - 1) * limit;
 
-  const result = await db.song.findMany({
-    skip,
-    take: limit,
+  const result = await db.song.aggregateRaw({
+    pipeline: [
+      {
+        $match: {},
+      },
+    ],
   });
+  // const result = await db.song.findMany({
+  //   skip,
+  //   take: limit,
+  // });
 
   res.status(200).json({ success: true, data: result });
 };

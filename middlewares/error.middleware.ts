@@ -10,10 +10,10 @@ export const globalErrorHandler = (
   res: Response,
   _next: NextFunction,
 ) => {
-  // Handled OError errors
+  // Handled AppError errors
   if (err instanceof AppError) {
     // TODO Add Logger here then remove console
-    console.error('Handled errors : globalErrorHandler', err.message);
+    // console.error('Handled errors : globalErrorHandler', err.message);
     const status = err.options
       ? err.options.status
         ? err.options.status

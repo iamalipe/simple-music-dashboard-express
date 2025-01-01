@@ -26,6 +26,10 @@ model Genre {
   id   String @id @default(auto()) @map("_id") @db.ObjectId
   name String @unique
 
+  originYear String?
+  description String?
+  popularInCountry String?
+
   songs Song[]
 
   createdAt DateTime @default(now())

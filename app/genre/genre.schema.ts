@@ -4,6 +4,9 @@ import { mongoIdRegex } from '../../utils/general.util';
 export const createSchema = z.object({
   body: z.object({
     name: z.string().min(2).max(100),
+    originYear: z.string().min(2).max(100).optional(),
+    description: z.string().min(2).max(1000).optional(),
+    popularInCountry: z.string().min(2).max(100).optional(),
   }),
 });
 
@@ -12,7 +15,10 @@ export const updateSchema = z.object({
     id: z.string().regex(mongoIdRegex, 'Invalid id'),
   }),
   body: z.object({
-    name: z.string().min(2).max(100),
+    name: z.string().min(2).max(100).optional(),
+    originYear: z.string().min(2).max(100).optional(),
+    description: z.string().min(2).max(1000).optional(),
+    popularInCountry: z.string().min(2).max(100).optional(),
   }),
 });
 

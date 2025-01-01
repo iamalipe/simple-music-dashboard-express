@@ -15,14 +15,15 @@ export type ChangeLogEntry = {
   quitIfNoKeys?: boolean;
 };
 
-/**
- * Converts a dot-separated key into a human-readable format.
- * Example: 'user.name' => 'User Name'
- */
 const formatKeyToHumanReadable = (key: string): string => {
   return key
     .split('.')
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .map(
+      (part) =>
+        part
+          .replace(/([a-z])([A-Z])/g, '$1 $2') // Insert space between camelCase words
+          .replace(/(^\w|\s\w)/g, (match) => match.toUpperCase()), // Capitalize first letters
+    )
     .join(' ');
 };
 

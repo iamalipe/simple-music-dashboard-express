@@ -7,14 +7,26 @@ import {
   getSchemaType,
 } from './genre.schema';
 import db from '../../services/db.service';
-import { Prisma } from '@prisma/client';
+import { Genre, Prisma } from '@prisma/client';
+import { addChangeLogEntry } from '../changeLog/changeLog.service';
 
 const createController = async (req: Request, res: Response) => {
   const body = req.body as createSchemaType['body'];
   const result = await db.genre.create({
     data: {
       name: body.name,
+      originYear: body.originYear,
+      description: body.description,
+      popularInCountry: body.popularInCountry,
     },
+  });
+
+  addChangeLogEntry({
+    keys: ['name', 'originYear', 'description', 'popularInCountry'],
+    module: 'genre',
+    title: `'${result.name}' Genre Created`,
+    newValue: result,
+    referenceId: result.id,
   });
 
   res.status(201).json({ success: true, data: result });
@@ -32,16 +44,43 @@ const updateController = async (req: Request, res: Response) => {
 
   if (!findResult) throw new AppError('record not found', { status: 404 });
 
-  const result = await db.genre.update({
+  const updateValues: Partial<Genre> = {};
+  const changeLogKeys: string[] = [];
+
+  if (body.name !== findResult.name) {
+    updateValues['name'] = body.name;
+    changeLogKeys.push('name');
+  }
+  if (body.originYear !== findResult.originYear) {
+    updateValues['originYear'] = body.originYear;
+    changeLogKeys.push('originYear');
+  }
+  if (body.description !== findResult.description) {
+    updateValues['description'] = body.description;
+    changeLogKeys.push('description');
+  }
+  if (body.popularInCountry !== findResult.popularInCountry) {
+    updateValues['popularInCountry'] = body.popularInCountry;
+    changeLogKeys.push('popularInCountry');
+  }
+
+  const updatedResult = await db.genre.update({
     where: {
       id: params.id,
     },
-    data: {
-      name: body.name,
-    },
+    data: updateValues,
   });
 
-  res.status(200).json({ success: true, data: result });
+  addChangeLogEntry({
+    keys: changeLogKeys,
+    module: 'genre',
+    title: `'${updatedResult.name}' Genre Updated`,
+    newValue: updatedResult,
+    oldValue: findResult,
+    referenceId: updatedResult.id,
+  });
+
+  res.status(200).json({ success: true, data: updatedResult });
 };
 
 const deleteController = async (req: Request, res: Response) => {
@@ -55,13 +94,21 @@ const deleteController = async (req: Request, res: Response) => {
 
   if (!findResult) throw new AppError('record not found', { status: 404 });
 
-  const result = await db.genre.delete({
+  const deletedResult = await db.genre.delete({
     where: {
       id: params.id,
     },
   });
 
-  res.status(200).json({ success: true, data: result });
+  addChangeLogEntry({
+    keys: ['name', 'originYear', 'description', 'popularInCountry'],
+    module: 'genre',
+    title: `'${deletedResult.name}' Genre Deleted`,
+    oldValue: deletedResult,
+    referenceId: deletedResult.id,
+  });
+
+  res.status(200).json({ success: true, data: deletedResult });
 };
 
 const getController = async (req: Request, res: Response) => {

@@ -7,7 +7,8 @@ import {
   getSchemaType,
 } from './artist.schema';
 import db from '../../services/db.service';
-import { Prisma } from '@prisma/client';
+import { Artist, Prisma } from '@prisma/client';
+import { addChangeLogEntry } from '../changeLog/changeLog.service';
 
 const createController = async (req: Request, res: Response) => {
   const body = req.body as createSchemaType['body'];
@@ -17,6 +18,14 @@ const createController = async (req: Request, res: Response) => {
       bio: body.bio,
       imageUrl: body.imageUrl,
     },
+  });
+
+  addChangeLogEntry({
+    keys: ['name', 'bio', 'imageUrl'],
+    module: 'artist',
+    title: `'${result.name}' Artist Created`,
+    newValue: result,
+    referenceId: result.id,
   });
 
   res.status(201).json({ success: true, data: result });
@@ -34,18 +43,39 @@ const updateController = async (req: Request, res: Response) => {
 
   if (!findResult) throw new AppError('record not found', { status: 404 });
 
-  const result = await db.artist.update({
+  const updateValues: Partial<Artist> = {};
+  const changeLogKeys: string[] = [];
+
+  if (body.name !== findResult.name) {
+    updateValues['name'] = body.name;
+    changeLogKeys.push('name');
+  }
+  if (body.bio !== findResult.bio) {
+    updateValues['bio'] = body.bio;
+    changeLogKeys.push('bio');
+  }
+  if (body.imageUrl !== findResult.imageUrl) {
+    updateValues['imageUrl'] = body.imageUrl;
+    changeLogKeys.push('imageUrl');
+  }
+
+  const updatedResult = await db.artist.update({
     where: {
       id: params.id,
     },
-    data: {
-      name: body.name,
-      bio: body.bio,
-      imageUrl: body.imageUrl,
-    },
+    data: updateValues,
   });
 
-  res.status(200).json({ success: true, data: result });
+  addChangeLogEntry({
+    keys: changeLogKeys,
+    module: 'artist',
+    title: `'${updatedResult.name}' Artist Updated`,
+    newValue: updatedResult,
+    oldValue: findResult,
+    referenceId: updatedResult.id,
+  });
+
+  res.status(200).json({ success: true, data: updatedResult });
 };
 
 const deleteController = async (req: Request, res: Response) => {
@@ -63,6 +93,14 @@ const deleteController = async (req: Request, res: Response) => {
     where: {
       id: params.id,
     },
+  });
+
+  addChangeLogEntry({
+    keys: ['name', 'bio', 'imageUrl'],
+    module: 'artist',
+    title: `'${result.name}' Artist Deleted`,
+    newValue: result,
+    referenceId: result.id,
   });
 
   res.status(200).json({ success: true, data: result });

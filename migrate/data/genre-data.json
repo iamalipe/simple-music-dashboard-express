@@ -4,799 +4,1199 @@
     "originYear": "1950s",
     "description": "Commercially recorded music often characterized by catchy melodies",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-04-03T08:34:59.984Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-03T13:27:22.784Z"
+    }
   },
   {
     "name": "Rock",
     "originYear": "1950s",
     "description": "Guitar-driven music with strong rhythms and often rebellious themes",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-11-01T23:17:56.870Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-01T13:06:42.582Z"
+    }
   },
   {
     "name": "Hip Hop",
     "originYear": "1970s",
     "description": "Music that consists of stylized rhythmic music accompanied by rapping",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-09-16T00:53:13.807Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-12T19:31:21.036Z"
+    }
   },
   {
     "name": "R&B",
     "originYear": "1940s",
     "description": "Rhythm and blues music combining jazz, gospel, and blues",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-07-01T21:25:53.378Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-08T02:51:21.290Z"
+    }
   },
   {
     "name": "Country",
     "originYear": "1920s",
     "description": "Music often focusing on rural life, relationships, and storytelling",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-12-23T19:01:31.284Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-26T04:46:26.561Z"
+    }
   },
   {
     "name": "Electronic Dance Music (EDM)",
     "originYear": "1980s",
     "description": "Electronic music produced primarily for nightclubs and festivals",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-05-01T17:08:30.044Z"
+    },
+    "updatedAt": {
+      "$date": "2024-07-10T05:24:52.556Z"
+    }
   },
   {
     "name": "Jazz",
     "originYear": "1910s",
     "description": "Improvisational music characterized by swing and blue notes",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-05-17T15:06:40.052Z"
+    },
+    "updatedAt": {
+      "$date": "2024-04-24T05:09:36.234Z"
+    }
   },
   {
     "name": "Classical",
     "originYear": "1750s",
     "description": "Formal, often orchestral music following Western musical traditions",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-05-13T11:34:44.032Z"
+    },
+    "updatedAt": {
+      "$date": "2024-07-10T09:15:06.562Z"
+    }
   },
   {
     "name": "Blues",
     "originYear": "1870s",
     "description": "African-American music characterized by call and response patterns and blue notes",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-07-11T15:18:51.934Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-29T17:28:39.692Z"
+    }
   },
   {
     "name": "Reggae",
     "originYear": "1960s",
     "description": "Music characterized by offbeat rhythms and socially conscious lyrics",
     "popularInCountry": "Jamaica",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-10-03T21:58:41.208Z"
+    },
+    "updatedAt": {
+      "$date": "2024-02-13T15:53:58.217Z"
+    }
   },
   {
     "name": "Folk",
     "originYear": "Early 20th century",
     "description": "Traditional music that often tells stories of common people",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-04-25T07:01:23.273Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-18T17:17:27.837Z"
+    }
   },
   {
     "name": "Metal",
     "originYear": "1960s",
     "description": "Loud, aggressive rock music with distorted guitars and powerful vocals",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-02-09T11:05:29.690Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-29T20:57:51.979Z"
+    }
   },
   {
     "name": "Punk",
     "originYear": "1970s",
     "description": "Fast-paced, aggressive rock music often with political themes",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-09-24T20:53:36.198Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-18T06:12:10.385Z"
+    }
   },
   {
     "name": "Indie",
     "originYear": "1980s",
     "description": "Music produced independently from commercial record labels",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-01-13T03:19:37.165Z"
+    },
+    "updatedAt": {
+      "$date": "2024-05-09T17:05:21.926Z"
+    }
   },
   {
     "name": "Soul",
     "originYear": "1950s",
     "description": "African-American music genre combining elements of gospel and rhythm and blues",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-02-05T02:50:20.310Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-15T22:03:07.917Z"
+    }
   },
   {
     "name": "Funk",
     "originYear": "1960s",
     "description": "Music style characterized by a strong rhythm section groove",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-03-28T01:51:38.769Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-10T17:16:53.034Z"
+    }
   },
   {
     "name": "Disco",
     "originYear": "1970s",
     "description": "Dance music characterized by four-on-the-floor beats and orchestral sounds",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-01-01T07:40:53.013Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-29T03:41:35.910Z"
+    }
   },
   {
     "name": "Gospel",
     "originYear": "Early 20th century",
     "description": "Christian music rooted in the historical African-American church",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-08-07T02:51:06.738Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-14T20:56:38.486Z"
+    }
   },
   {
     "name": "Alternative Rock",
     "originYear": "1980s",
     "description": "Rock music that originated from the independent music underground",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-04-30T19:27:21.012Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-27T05:51:58.703Z"
+    }
   },
   {
     "name": "Grunge",
     "originYear": "1980s",
     "description": "Alternative rock subgenre characterized by distorted electric guitars",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.624Z",
-    "updatedAt": "2025-01-01T03:15:32.624Z"
+    "createdAt": {
+      "$date": "2023-11-09T14:36:50.858Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-03T16:36:46.221Z"
+    }
   },
   {
     "name": "Techno",
     "originYear": "1980s",
     "description": "Electronic dance music characterized by a repetitive four on the floor beat",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-08-03T04:27:24.478Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-16T10:31:37.084Z"
+    }
   },
   {
     "name": "House",
     "originYear": "1980s",
     "description": "Electronic dance music characterized by repetitive 4/4 beats and synthesized basslines",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-12-30T07:54:03.171Z"
+    },
+    "updatedAt": {
+      "$date": "2024-08-02T11:42:00.811Z"
+    }
   },
   {
     "name": "K-Pop",
     "originYear": "1990s",
     "description": "Popularized Korean pop music featuring catchy melodies and synchronized dancing",
     "popularInCountry": "South Korea",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-07-16T17:09:33.030Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-26T01:29:54.277Z"
+    }
   },
   {
     "name": "J-Pop",
     "originYear": "1990s",
     "description": "Japanese pop music characterized by its upbeat melodies and catchy hooks",
     "popularInCountry": "Japan",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-06-29T19:42:59.174Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-24T23:28:31.268Z"
+    }
   },
   {
     "name": "Salsa",
     "originYear": "1960s",
     "description": "Upbeat Latin dance music with Afro-Cuban roots",
     "popularInCountry": "Cuba",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-10T23:10:05.250Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-18T02:08:06.359Z"
+    }
   },
   {
     "name": "Rap",
     "originYear": "1970s",
     "description": "Rhythmic vocal style of hip hop music",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-11-17T06:24:52.248Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-08T07:14:09.338Z"
+    }
   },
   {
     "name": "Dubstep",
     "originYear": "1990s",
     "description": "Electronic dance music characterized by emphasised syncopated percussive patterns",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-03-21T05:01:25.400Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-04T19:48:49.371Z"
+    }
   },
   {
     "name": "Trance",
     "originYear": "1990s",
     "description": "Electronic dance music characterized by a tempo of 125-150 BPM and repeating melodic phrases",
     "popularInCountry": "Germany",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-05-21T10:25:24.549Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-17T21:13:03.076Z"
+    }
   },
   {
     "name": "Ambient",
     "originYear": "1970s",
     "description": "Genre of music that emphasizes tone and atmosphere over traditional musical structure",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-28T08:02:31.385Z"
+    },
+    "updatedAt": {
+      "$date": "2024-05-18T20:41:56.793Z"
+    }
   },
   {
     "name": "New Wave",
     "originYear": "1970s",
     "description": "Rock music inspired by punk rock and incorporating electronic and experimental elements",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-03-08T18:25:56.211Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-27T14:12:48.342Z"
+    }
   },
   {
     "name": "Ska",
     "originYear": "1950s",
     "description": "Precursor to reggae, characterized by a walking bass line accented with rhythms on the offbeat",
     "popularInCountry": "Jamaica",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-10T23:28:10.277Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-14T22:42:12.124Z"
+    }
   },
   {
     "name": "Bossa Nova",
     "originYear": "1950s",
     "description": "Brazilian music genre derived from samba with jazz harmonies",
     "popularInCountry": "Brazil",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-01-02T22:37:48.016Z"
+    },
+    "updatedAt": {
+      "$date": "2024-08-12T23:41:06.979Z"
+    }
   },
   {
     "name": "Trap",
     "originYear": "2000s",
     "description": "Hip hop subgenre characterized by synthesized drums and dark, atmospheric sounds",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-02T05:38:36.293Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-16T16:31:50.138Z"
+    }
   },
   {
     "name": "Synthpop",
     "originYear": "1970s",
     "description": "Subgenre of new wave music featuring the synthesizer as the dominant musical instrument",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-06-13T02:13:57.794Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-06T15:32:44.469Z"
+    }
   },
   {
     "name": "Opera",
     "originYear": "16th century",
     "description": "Dramatic work in one or more acts set to music for singers and instrumentalists",
     "popularInCountry": "Italy",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-20T13:39:50.342Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-11T20:43:06.160Z"
+    }
   },
   {
     "name": "Bluegrass",
     "originYear": "1940s",
     "description": "Form of American roots music characterized by acoustic stringed instruments",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-12-16T16:58:12.807Z"
+    },
+    "updatedAt": {
+      "$date": "2024-02-03T19:58:28.234Z"
+    }
   },
   {
     "name": "Psychedelic Rock",
     "originYear": "1960s",
     "description": "Rock music intended to enhance and reflect the mind-altering experiences of psychedelic drugs",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-04-06T16:02:00.304Z"
+    },
+    "updatedAt": {
+      "$date": "2024-04-13T02:23:14.188Z"
+    }
   },
   {
     "name": "Grime",
     "originYear": "Early 2000s",
     "description": "Electronic dance music that emerged from UK garage and jungle",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-07-29T07:29:43.636Z"
+    },
+    "updatedAt": {
+      "$date": "2024-05-29T13:54:35.797Z"
+    }
   },
   {
     "name": "Afrobeats",
     "originYear": "2000s",
     "description": "West African pop music blending various indigenous African music styles",
     "popularInCountry": "Nigeria",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-05-18T22:06:19.958Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-06T15:24:17.769Z"
+    }
   },
   {
     "name": "Motown",
     "originYear": "1960s",
     "description": "Soul music with pop influences produced by Motown Records",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-20T16:04:50.640Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-04T08:19:40.819Z"
+    }
   },
   {
     "name": "Samba",
     "originYear": "1910s",
     "description": "Brazilian music and dance style with African rhythms",
     "popularInCountry": "Brazil",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-03-15T02:11:10.163Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-07T17:02:05.879Z"
+    }
   },
   {
     "name": "Flamenco",
     "originYear": "18th century",
     "description": "Andalusian music and dance characterized by hand clapping and intense emotions",
     "popularInCountry": "Spain",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-06-25T13:34:33.997Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-18T02:57:35.636Z"
+    }
   },
   {
     "name": "Bollywood",
     "originYear": "1960s",
     "description": "Popular music from Indian cinema, often featuring elaborate production",
     "popularInCountry": "India",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-01-30T04:22:56.673Z"
+    },
+    "updatedAt": {
+      "$date": "2024-05-06T08:28:10.353Z"
+    }
   },
   {
     "name": "Swing",
     "originYear": "1930s",
     "description": "Jazz subgenre characterized by a 'swinging' rhythm",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-12-30T05:34:43.995Z"
+    },
+    "updatedAt": {
+      "$date": "2024-07-14T19:28:44.786Z"
+    }
   },
   {
     "name": "Glam Rock",
     "originYear": "1970s",
     "description": "Rock music characterized by outrageous costumes, makeup, and hairstyles",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-03-10T10:15:59.949Z"
+    },
+    "updatedAt": {
+      "$date": "2024-07-17T20:26:55.578Z"
+    }
   },
   {
     "name": "Prog Rock",
     "originYear": "1960s",
     "description": "Rock music incorporating elements of classical music and jazz",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-03-10T21:11:51.347Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-01T02:39:16.503Z"
+    }
   },
   {
     "name": "Garage Rock",
     "originYear": "1960s",
     "description": "Raw and energetic rock subgenre",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-04-30T01:09:32.015Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-19T20:35:35.140Z"
+    }
   },
   {
     "name": "Shoegaze",
     "originYear": "1980s",
     "description": "Subgenre of indie and alternative rock characterized by distorted guitars and indistinct vocals",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-12-25T02:16:47.134Z"
+    },
+    "updatedAt": {
+      "$date": "2024-05-21T05:59:23.789Z"
+    }
   },
   {
     "name": "Post-Rock",
     "originYear": "1990s",
     "description": "Experimental rock characterized by use of rock instrumentation for non-rock purposes",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-01T21:38:17.378Z"
+    },
+    "updatedAt": {
+      "$date": "2024-04-26T16:57:03.127Z"
+    }
   },
   {
     "name": "Cumbia",
     "originYear": "1940s",
     "description": "Colombian folk music and dance style",
     "popularInCountry": "Colombia",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-07-03T13:24:01.556Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-17T21:07:16.467Z"
+    }
   },
   {
     "name": "Surf Rock",
     "originYear": "1960s",
     "description": "Rock music associated with surf culture, featuring electric guitars with heavy reverb",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-08-08T14:57:36.387Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-27T03:15:39.614Z"
+    }
   },
   {
     "name": "Zydeco",
     "originYear": "Early 20th century",
     "description": "Music genre blending blues and rhythm and blues from southwest Louisiana",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-02-25T14:33:50.744Z"
+    },
+    "updatedAt": {
+      "$date": "2024-02-24T03:31:01.306Z"
+    }
   },
   {
     "name": "Noise Rock",
     "originYear": "1980s",
     "description": "Rock music that emphasizes dissonance and noise manipulation",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-06-07T13:24:21.237Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-13T15:09:22.142Z"
+    }
   },
   {
     "name": "Vaporwave",
     "originYear": "2010s",
     "description": "Electronic music genre and art movement characterized by a fascination with retro cultural aesthetics",
     "popularInCountry": "Internet",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-06-16T11:01:49.575Z"
+    },
+    "updatedAt": {
+      "$date": "2024-07-04T16:30:16.894Z"
+    }
   },
   {
     "name": "Boogaloo",
     "originYear": "1960s",
     "description": "Latin music and dance style blending mambo and soul",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-08-12T20:20:58.784Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-15T12:52:16.709Z"
+    }
   },
   {
     "name": "Krautrock",
     "originYear": "1960s",
     "description": "Experimental rock music that developed in West Germany",
     "popularInCountry": "Germany",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-28T06:32:55.574Z"
+    },
+    "updatedAt": {
+      "$date": "2024-02-28T13:04:32.605Z"
+    }
   },
   {
     "name": "Baroque",
     "originYear": "1600-1750",
     "description": "Classical music characterized by ornate, grandiose style",
     "popularInCountry": "Europe",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-08-07T12:51:15.771Z"
+    },
+    "updatedAt": {
+      "$date": "2024-08-29T17:14:07.695Z"
+    }
   },
   {
     "name": "Emo",
     "originYear": "1980s",
     "description": "Emotionally charged punk rock subgenre",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-12-21T23:50:53.143Z"
+    },
+    "updatedAt": {
+      "$date": "2024-05-01T03:04:47.150Z"
+    }
   },
   {
     "name": "Industrial",
     "originYear": "1970s",
     "description": "Harsh, experimental electronic music often using mechanical sounds",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-01-01T13:34:30.753Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-20T14:34:02.982Z"
+    }
   },
   {
     "name": "Nu Metal",
     "originYear": "1990s",
     "description": "Heavy metal subgenre incorporating elements of other genres like hip hop and grunge",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-11-24T04:01:29.860Z"
+    },
+    "updatedAt": {
+      "$date": "2024-07-25T15:56:28.126Z"
+    }
   },
   {
     "name": "Britpop",
     "originYear": "1990s",
     "description": "British alternative rock movement characterized by guitar pop reminiscent of the 1960s",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-06-17T04:07:45.560Z"
+    },
+    "updatedAt": {
+      "$date": "2024-02-27T07:56:34.565Z"
+    }
   },
   {
     "name": "Eurodance",
     "originYear": "1990s",
     "description": "European dance music characterized by synthesized melodies and vocals",
     "popularInCountry": "Europe",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-01-17T22:44:58.783Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-20T10:05:13.899Z"
+    }
   },
   {
     "name": "Bebop",
     "originYear": "1940s",
     "description": "Jazz subgenre characterized by fast tempos and improvisation based on harmonic structure",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-12T06:37:25.333Z"
+    },
+    "updatedAt": {
+      "$date": "2024-04-27T07:12:16.959Z"
+    }
   },
   {
     "name": "Rockabilly",
     "originYear": "1950s",
     "description": "One of the earliest styles of rock and roll music, blending Western musical styles with rhythm and blues",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-01-25T18:57:32.922Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-24T20:04:45.331Z"
+    }
   },
   {
     "name": "Gregorian Chant",
     "originYear": "6th century",
     "description": "Monophonic, unaccompanied form of sacred music in Western Christianity",
     "popularInCountry": "Vatican City",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-12-13T08:45:09.019Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-29T21:02:45.062Z"
+    }
   },
   {
     "name": "Breakbeat",
     "originYear": "1970s",
     "description": "Electronic music genre characterized by the use of sampled rhythms",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-06T19:34:50.321Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-19T14:56:42.594Z"
+    }
   },
   {
     "name": "Acid House",
     "originYear": "1980s",
     "description": "Subgenre of house music developed using Roland TB-303 electronic synthesizer-sequencer",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-29T03:50:58.369Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-28T21:38:01.665Z"
+    }
   },
   {
     "name": "Ragtime",
     "originYear": "1890s",
     "description": "Musical style characterized by a syncopated melodic line and regularly accented accompaniment",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-01-07T08:11:03.563Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-27T18:08:45.582Z"
+    }
   },
   {
     "name": "Drone",
     "originYear": "1960s",
     "description": "Minimalist music style emphasizing sustained tones or repetition",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-08-12T22:38:04.759Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T09:49:22.222Z"
+    }
   },
   {
     "name": "Dancehall",
     "originYear": "1970s",
     "description": "Jamaican popular music that originated as a more sparse version of reggae",
     "popularInCountry": "Jamaica",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-02-02T01:19:40.735Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-13T21:26:51.176Z"
+    }
   },
   {
     "name": "Electronica",
     "originYear": "1990s",
     "description": "Broad range of contemporary electronic music designed for a wide range of uses",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-06-01T12:27:54.433Z"
+    },
+    "updatedAt": {
+      "$date": "2024-02-25T01:50:19.730Z"
+    }
   },
   {
     "name": "Drum and Bass",
     "originYear": "1990s",
     "description": "Electronic music genre characterized by fast breakbeats and heavy bass lines",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-07-06T13:48:25.414Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-20T17:57:36.340Z"
+    }
   },
   {
     "name": "Hardcore Punk",
     "originYear": "1980s",
     "description": "Faster and more aggressive derivative of punk rock",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-07-05T07:42:58.114Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-12T15:41:26.019Z"
+    }
   },
   {
     "name": "Doo-wop",
     "originYear": "1940s",
     "description": "Vocal group harmony style of rhythm and blues and rock and roll",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-20T22:55:25.980Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-30T03:59:58.241Z"
+    }
   },
   {
     "name": "Goa Trance",
     "originYear": "1990s",
     "description": "Electronic music style that originated in Goa, India",
     "popularInCountry": "India",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-03-30T20:34:47.459Z"
+    },
+    "updatedAt": {
+      "$date": "2024-04-10T15:09:26.847Z"
+    }
   },
   {
     "name": "Tango",
     "originYear": "1880s",
     "description": "Partner dance and music genre originating at the Río de la Plata",
     "popularInCountry": "Argentina",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-16T09:42:17.384Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-09T05:24:51.584Z"
+    }
   },
   {
     "name": "Chiptune",
     "originYear": "1980s",
     "description": "Electronic music created using the sound chips of vintage computers and gaming consoles",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-23T06:45:51.129Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-02T19:55:06.910Z"
+    }
   },
   {
     "name": "Conscious Hip Hop",
     "originYear": "1980s",
     "description": "Hip hop music focusing on social issues and political commentary",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-05-17T11:56:38.231Z"
+    },
+    "updatedAt": {
+      "$date": "2024-07-01T02:51:41.491Z"
+    }
   },
   {
     "name": "Gangsta Rap",
     "originYear": "1980s",
     "description": "Hip hop music characterized by themes and content from urban crime and gang lifestyle",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-06-14T02:20:29.473Z"
+    },
+    "updatedAt": {
+      "$date": "2024-08-10T18:48:43.350Z"
+    }
   },
   {
     "name": "Twee Pop",
     "originYear": "1980s",
     "description": "Indie pop subgenre characterized by childlike sweetness and simplicity",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-27T06:16:37.749Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-15T09:39:40.165Z"
+    }
   },
   {
     "name": "Afrobeat",
     "originYear": "1960s",
     "description": "Music genre combining West African musical styles with American funk and jazz",
     "popularInCountry": "Nigeria",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-05-06T14:08:21.248Z"
+    },
+    "updatedAt": {
+      "$date": "2024-03-02T14:28:11.768Z"
+    }
   },
   {
     "name": "Math Rock",
     "originYear": "1980s",
     "description": "Rock music characterized by complex rhythms and time signatures",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-02-09T07:51:18.189Z"
+    },
+    "updatedAt": {
+      "$date": "2024-02-10T20:23:47.712Z"
+    }
   },
   {
     "name": "Reggaeton",
     "originYear": "1990s",
     "description": "Music style blending Latin rhythms, Caribbean music, and hip hop",
     "popularInCountry": "Puerto Rico",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-23T04:28:09.055Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-25T06:59:59.121Z"
+    }
   },
   {
     "name": "Mariachi",
     "originYear": "19th century",
     "description": "Traditional Mexican folk music featuring stringed instruments and trumpets",
     "popularInCountry": "Mexico",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-22T03:00:42.839Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-16T12:26:37.310Z"
+    }
   },
   {
     "name": "Qawwali",
     "originYear": "13th century",
     "description": "Form of Sufi Islamic devotional singing originating from the Indian subcontinent",
     "popularInCountry": "Pakistan",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-08-05T17:19:11.120Z"
+    },
+    "updatedAt": {
+      "$date": "2024-02-08T07:48:24.901Z"
+    }
   },
   {
     "name": "Grindcore",
     "originYear": "1980s",
     "description": "Extreme fusion of heavy metal and hardcore punk",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-02-10T07:04:24.821Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-05T23:45:10.570Z"
+    }
   },
   {
     "name": "Downtempo",
     "originYear": "1990s",
     "description": "Electronic music style similar to ambient music but with a beat",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-10-31T17:35:45.745Z"
+    },
+    "updatedAt": {
+      "$date": "2024-08-28T15:47:21.764Z"
+    }
   },
   {
     "name": "Worldbeat",
     "originYear": "1980s",
     "description": "Popular music characterized by the use of indigenous music styles with added Western pop",
     "popularInCountry": "Global",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-06-29T13:06:46.982Z"
+    },
+    "updatedAt": {
+      "$date": "2024-08-03T02:59:06.525Z"
+    }
   },
   {
     "name": "Ghazal",
     "originYear": "10th century",
     "description": "Poetic form consisting of rhyming couplets and a refrain, set to music",
     "popularInCountry": "India/Pakistan",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-05-23T23:47:02.789Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-12T10:13:02.106Z"
+    }
   },
   {
     "name": "Vocaloid",
     "originYear": "2000s",
     "description": "Music featuring synthesized vocals created using voice synthesizer software",
     "popularInCountry": "Japan",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-07-17T21:22:06.252Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-10T19:13:52.641Z"
+    }
   },
   {
     "name": "Lowercase",
     "originYear": "1990s",
     "description": "Extreme form of ambient minimalism relying on quiet and unobtrusive sounds",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-05-28T15:32:47.111Z"
+    },
+    "updatedAt": {
+      "$date": "2024-08-14T22:23:11.773Z"
+    }
   },
   {
     "name": "Smooth Jazz",
     "originYear": "1970s",
     "description": "Jazz style incorporating elements of R&B, funk, and pop",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-09T10:14:31.386Z"
+    },
+    "updatedAt": {
+      "$date": "2024-07-08T15:53:36.609Z"
+    }
   },
   {
     "name": "Acid Jazz",
     "originYear": "1980s",
     "description": "Music genre combining elements of jazz, funk, soul, and disco",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-11-27T00:03:21.973Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-24T09:39:32.256Z"
+    }
   },
   {
     "name": "Raga Rock",
     "originYear": "1960s",
     "description": "Rock music incorporating classical Indian musical elements",
     "popularInCountry": "United Kingdom/India",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-12-11T13:02:27.084Z"
+    },
+    "updatedAt": {
+      "$date": "2024-04-28T03:10:41.045Z"
+    }
   },
   {
     "name": "Tropicália",
     "originYear": "1960s",
     "description": "Brazilian artistic movement blending traditional Brazilian culture with foreign influences",
     "popularInCountry": "Brazil",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-02-01T12:27:19.082Z"
+    },
+    "updatedAt": {
+      "$date": "2024-08-26T06:04:13.289Z"
+    }
   },
   {
     "name": "Yacht Rock",
     "originYear": "1970s-1980s",
     "description": "Soft rock characterized by smooth sounds and high production value",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-08-30T15:08:01.171Z"
+    },
+    "updatedAt": {
+      "$date": "2024-07-03T21:51:08.862Z"
+    }
   },
   {
     "name": "Neue Deutsche Welle",
     "originYear": "1980s",
     "description": "New wave music movement in West Germany and Austria",
     "popularInCountry": "Germany",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-02-23T07:34:55.555Z"
+    },
+    "updatedAt": {
+      "$date": "2024-10-30T03:35:26.666Z"
+    }
   },
   {
     "name": "Goregrind",
     "originYear": "1980s",
     "description": "Extreme subgenre of grindcore focusing on gore-based lyrics and imagery",
     "popularInCountry": "United Kingdom",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-11-24T08:41:18.523Z"
+    },
+    "updatedAt": {
+      "$date": "2024-06-12T12:34:19.005Z"
+    }
   },
   {
     "name": "Chopped and Screwed",
     "originYear": "1990s",
     "description": "Hip hop technique of slowing down the tempo and skipping beats",
     "popularInCountry": "United States",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-09-19T08:32:12.613Z"
+    },
+    "updatedAt": {
+      "$date": "2024-05-06T11:52:29.271Z"
+    }
   },
   {
     "name": "City Pop",
     "originYear": "1970s-1980s",
     "description": "Japanese pop music subgenre influenced by American soft rock and R&B",
     "popularInCountry": "Japan",
-    "createdAt": "2025-01-01T03:15:32.625Z",
-    "updatedAt": "2025-01-01T03:15:32.625Z"
+    "createdAt": {
+      "$date": "2023-05-21T01:57:30.422Z"
+    },
+    "updatedAt": {
+      "$date": "2024-08-25T23:41:26.202Z"
+    }
   }
 ]

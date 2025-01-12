@@ -125,20 +125,18 @@ const getAllController = async (req: Request, res: Response) => {
   const page = parseInt(query.page as unknown as string, 10);
   const skip = (page - 1) * limit;
 
-  console.log('req.query', req.query.sort);
-  console.dir(req.query.sort, { depth: null });
-
-
-
   const filter: Prisma.ArtistWhereInput = {};
-  let orderBy: Prisma.ArtistOrderByWithRelationInput | undefined = undefined;
+  let orderBy: Prisma.ArtistOrderByWithRelationInput[] | undefined = undefined;
 
-  switch (query.orderBy) {
-    default:
-      orderBy = {
-        [query.orderBy]: query.order,
-      };
-      break;
+  if (query.sort.length > 0) {
+    orderBy = query.sort.map((sort) => {
+      switch (sort.orderBy) {
+        default:
+          return {
+            [sort.orderBy]: sort.order,
+          };
+      }
+    });
   }
 
   const result = await db.artist.findMany({
@@ -150,10 +148,7 @@ const getAllController = async (req: Request, res: Response) => {
 
   const total = await db.artist.count({ where: filter });
 
-  const sort = {
-    orderBy: query.orderBy,
-    order: query.order,
-  };
+  const sort = query.sort;
 
   const pagination = {
     page,

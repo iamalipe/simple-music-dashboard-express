@@ -131,14 +131,17 @@ const getAllController = async (req: Request, res: Response) => {
   const skip = (page - 1) * limit;
 
   const filter: Prisma.GenreWhereInput = {};
-  let orderBy: Prisma.GenreOrderByWithRelationInput | undefined = undefined;
+  let orderBy: Prisma.GenreOrderByWithRelationInput[] | undefined = undefined;
 
-  switch (query.orderBy) {
-    default:
-      orderBy = {
-        [query.orderBy]: query.order,
-      };
-      break;
+  if (query.sort.length > 0) {
+    orderBy = query.sort.map((sort) => {
+      switch (sort.orderBy) {
+        default:
+          return {
+            [sort.orderBy]: sort.order,
+          };
+      }
+    });
   }
 
   const result = await db.genre.findMany({
@@ -150,10 +153,7 @@ const getAllController = async (req: Request, res: Response) => {
 
   const total = await db.genre.count({ where: filter });
 
-  const sort = {
-    orderBy: query.orderBy,
-    order: query.order,
-  };
+  const sort = query.sort;
 
   const pagination = {
     page,

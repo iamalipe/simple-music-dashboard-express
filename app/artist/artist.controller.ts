@@ -125,6 +125,11 @@ const getAllController = async (req: Request, res: Response) => {
   const page = parseInt(query.page as unknown as string, 10);
   const skip = (page - 1) * limit;
 
+  console.log('req.query', req.query.sort);
+  console.dir(req.query.sort, { depth: null });
+
+
+
   const filter: Prisma.ArtistWhereInput = {};
   let orderBy: Prisma.ArtistOrderByWithRelationInput | undefined = undefined;
 

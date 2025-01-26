@@ -19,7 +19,7 @@
     "build:pre": "npx prisma generate && npx prisma db push"
   },
   "dependencies": {
-    "@prisma/client": "^6.1.0",
+    "@prisma/client": "^6.2.1",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dayjs": "^1.11.13",
@@ -34,7 +34,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.3",
     "nodemon": "^3.1.7",
-    "prisma": "^6.1.0",
+    "prisma": "^6.2.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   }

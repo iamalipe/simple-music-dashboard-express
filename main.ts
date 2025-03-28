@@ -4,7 +4,7 @@ import 'express-async-errors';
 import express from 'express';
 import cors from 'cors';
 
-import { PublicUser } from './types/PublicUser.type';
+import type { PublicUser } from './types/PublicUser.type';
 import { globalErrorHandler } from './middlewares/error.middleware';
 import './utils/appError.util';
 import appRouter from './app/app.route';
@@ -14,17 +14,18 @@ const app = express();
 app.use(express.json());
 // app.set('trust proxy', true);
 
-const whitelist = process.env.WHITELISTED_DOMAINS
-  ? process.env.WHITELISTED_DOMAINS.split(',')
-  : [];
+app.use(cors());
+// const whitelist = process.env.WHITELISTED_DOMAINS
+//   ? process.env.WHITELISTED_DOMAINS.split(',')
+//   : [];
 
-app.use(
-  cors({
-    origin: whitelist,
-    methods: 'GET,PUT,POST,DELETE',
-    credentials: true,
-  }),
-);
+// app.use(
+//   cors({
+//     origin: whitelist,
+//     methods: 'GET,PUT,POST,DELETE',
+//     credentials: true,
+//   }),
+// );
 app.use(limiter);
 
 app.get('/', async (_, res) => {
@@ -43,8 +44,12 @@ const start = (): void => {
     app.listen(EXPRESS_PORT, () => {
       console.info(`App is running on port ${EXPRESS_PORT}.`);
     });
-  } catch (error: any) {
-    console.error(error.message);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    } else {
+      console.error('An unknown error occurred');
+    }
     process.exit(1);
   }
 };

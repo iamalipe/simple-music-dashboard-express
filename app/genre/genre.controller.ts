@@ -12,6 +12,20 @@ import { addChangeLogEntry } from '../changeLog/changeLog.service';
 
 const createController = async (req: Request, res: Response) => {
   const body = req.body as createSchemaType['body'];
+
+  // unique check
+  const uniqueCheck = await db.genre.findFirst({
+    where: {
+      name: {
+        equals: body.name,
+        mode: 'insensitive',
+      },
+    },
+  });
+
+  if (uniqueCheck)
+    throw new AppError('already exists', { status: 400, path: 'name' });
+
   const result = await db.genre.create({
     data: {
       name: body.name,
@@ -29,7 +43,13 @@ const createController = async (req: Request, res: Response) => {
     referenceId: result.id,
   });
 
-  res.status(201).json({ success: true, data: result });
+  res.status(201).json({
+    success: true,
+    data: result,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const updateController = async (req: Request, res: Response) => {
@@ -47,22 +67,34 @@ const updateController = async (req: Request, res: Response) => {
   const updateValues: Partial<Genre> = {};
   const changeLogKeys: string[] = [];
 
-  if (body.name !== findResult.name) {
+  if (body.name !== undefined && body.name !== findResult.name) {
     updateValues['name'] = body.name;
     changeLogKeys.push('name');
   }
-  if (body.originYear !== findResult.originYear) {
+  if (
+    body.originYear !== undefined &&
+    body.originYear !== findResult.originYear
+  ) {
     updateValues['originYear'] = body.originYear;
     changeLogKeys.push('originYear');
   }
-  if (body.description !== findResult.description) {
+  if (
+    body.description !== undefined &&
+    body.description !== findResult.description
+  ) {
     updateValues['description'] = body.description;
     changeLogKeys.push('description');
   }
-  if (body.popularInCountry !== findResult.popularInCountry) {
+  if (
+    body.popularInCountry !== undefined &&
+    body.popularInCountry !== findResult.popularInCountry
+  ) {
     updateValues['popularInCountry'] = body.popularInCountry;
     changeLogKeys.push('popularInCountry');
   }
+
+  if (Object.keys(updateValues).length === 0)
+    throw new AppError('no data to update', { status: 400 });
 
   const updatedResult = await db.genre.update({
     where: {
@@ -80,7 +112,13 @@ const updateController = async (req: Request, res: Response) => {
     referenceId: updatedResult.id,
   });
 
-  res.status(200).json({ success: true, data: updatedResult });
+  res.status(200).json({
+    success: true,
+    data: updatedResult,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const deleteController = async (req: Request, res: Response) => {
@@ -108,7 +146,13 @@ const deleteController = async (req: Request, res: Response) => {
     referenceId: deletedResult.id,
   });
 
-  res.status(200).json({ success: true, data: deletedResult });
+  res.status(200).json({
+    success: true,
+    data: deletedResult,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const getController = async (req: Request, res: Response) => {
@@ -121,7 +165,13 @@ const getController = async (req: Request, res: Response) => {
 
   if (!result) throw new AppError('record not found', { status: 404 });
 
-  res.status(200).json({ success: true, data: result });
+  res.status(200).json({
+    success: true,
+    data: result,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const getAllController = async (req: Request, res: Response) => {
@@ -162,7 +212,15 @@ const getAllController = async (req: Request, res: Response) => {
     current: result.length,
   };
 
-  res.status(200).json({ success: true, data: result, sort, pagination });
+  res.status(200).json({
+    success: true,
+    data: result,
+    sort,
+    pagination,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 export default {

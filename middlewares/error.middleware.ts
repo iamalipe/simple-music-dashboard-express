@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client';
 import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
 
@@ -29,6 +30,7 @@ export const globalErrorHandler = (
       success: false,
       message: err.message,
       errors: errors,
+      timestamp: new Date().toISOString(),
     });
     return;
   }
@@ -60,6 +62,56 @@ export const globalErrorHandler = (
       success: false,
       message: 'Validation Error',
       errors: newErrors,
+      timestamp: new Date().toISOString(),
+    });
+    return;
+  }
+
+  // Handle Prisma errors
+  if (err instanceof Prisma.PrismaClientKnownRequestError) {
+    let message = 'Database Error';
+    let status = 400;
+
+    // Handle specific Prisma error codes
+    switch (err.code) {
+      case 'P2002': // Unique constraint violation
+        message = `Unique constraint violation on ${
+          err.meta?.target || 'field'
+        }`;
+        break;
+      case 'P2003': // Foreign key constraint failed
+        message = `Foreign key constraint failed on ${
+          err.meta?.field_name || 'field'
+        }`;
+        break;
+      case 'P2025': // Record not found
+        message = 'Record not found';
+        status = 404;
+        break;
+      case 'P2001': // Record does not exist
+        message = 'Record does not exist';
+        status = 404;
+        break;
+      default:
+        message = `Database error: ${err.code}`;
+    }
+
+    res.status(status).json({
+      success: false,
+      message,
+      errors: [{ message, path: (err.meta?.target as string) || '' }],
+      timestamp: new Date().toISOString(),
+    });
+    return;
+  }
+
+  // Handle Prisma validation errors
+  if (err instanceof Prisma.PrismaClientValidationError) {
+    res.status(400).json({
+      success: false,
+      message: 'Database Validation Error',
+      errors: [],
+      timestamp: new Date().toISOString(),
     });
     return;
   }
@@ -67,8 +119,11 @@ export const globalErrorHandler = (
   // Unhandled errors
   // TODO Add Logger here then remove console
   console.error('Unhandled errors : globalErrorHandler', err.message);
-  res
-    .status(500)
-    .json({ success: false, errors: [], message: 'Internal Server Error' });
+  res.status(500).json({
+    success: false,
+    errors: [],
+    message: err.message,
+    timestamp: new Date().toISOString(),
+  });
   return;
 };

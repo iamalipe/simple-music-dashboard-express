@@ -11,6 +11,7 @@ import { globalErrorHandler } from './middlewares/error.middleware';
 import './utils/appError.util';
 import appRouter from './app/app.route';
 import { limiter } from './middlewares/limiter.middleware';
+import { basicAuth } from './middlewares/basicAuth.middleware';
 
 promClient.collectDefaultMetrics({
   register: promClient.register,
@@ -34,7 +35,7 @@ app.use(cors());
 // );
 app.use(limiter);
 
-app.get('/metrics', async (_, res) => {
+app.get('/metrics', basicAuth, async (_, res) => {
   res.setHeader('Content-Type', promClient.register.contentType);
   const metrics = await promClient.register.metrics();
   res.send(metrics);

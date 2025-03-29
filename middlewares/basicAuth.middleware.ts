@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
 const BASIC_AUTH_USERNAME = process.env.BASIC_AUTH_USERNAME || 'admin';
-const BASIC_AUTH_PASSWORD = process.env.BASIC_AUTH_USERNAME || 'password';
+const BASIC_AUTH_PASSWORD = process.env.BASIC_AUTH_PASSWORD || 'password';
 
 export const basicAuth = (req: Request, res: Response, next: NextFunction) => {
   // Check for authorization header

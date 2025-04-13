@@ -6,7 +6,7 @@ import {
   getAllSchemaType,
   getSchemaType,
 } from './song.schema';
-import db from '../../services/db.service';
+import db from '../../services/db.services';
 import { Prisma } from '@prisma/client';
 
 const createController = async (req: Request, res: Response) => {

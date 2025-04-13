@@ -1,4 +1,4 @@
-import db from '../../services/db.service';
+import db from '../../services/db.services';
 
 export type ChangeLogEntry = {
   keys: string[];

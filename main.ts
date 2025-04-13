@@ -3,22 +3,22 @@ dotenv.config();
 import 'express-async-errors';
 import express from 'express';
 import cors from 'cors';
-
-import promClient from 'prom-client';
+import cookieParser from 'cookie-parser';
 
 import type { PublicUser } from './types/PublicUser.type';
-import { globalErrorHandler } from './middlewares/error.middleware';
-import './utils/appError.util';
+import { globalErrorHandler } from './middlewares/error.middlewares';
+import './utils/appError.utils';
 import appRouter from './app/app.route';
-import { limiter } from './middlewares/limiter.middleware';
-import { basicAuth } from './middlewares/basicAuth.middleware';
-
-promClient.collectDefaultMetrics({
-  register: promClient.register,
-});
+import { limiter } from './middlewares/limiter.middlewares';
+import { PORT } from './config/default';
+import { startMetricsServer } from './utils/metrics.utils';
+import { healthCheckController, rootController } from './app/app.controller';
+import { resTime } from './middlewares/resTime.middlewares';
+import logger from './utils/logger';
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 // app.set('trust proxy', true);
 
 app.use(cors());
@@ -34,34 +34,25 @@ app.use(cors());
 //   }),
 // );
 app.use(limiter);
+app.use(resTime);
 
-app.get('/metrics', basicAuth, async (_, res) => {
-  res.setHeader('Content-Type', promClient.register.contentType);
-  const metrics = await promClient.register.metrics();
-  res.send(metrics);
-});
-
-app.get('/', async (_, res) => {
-  res.send('Hello World');
-});
-app.get('/ping', async (_, res) => {
-  res.send('Pong!');
-});
+app.get('/', rootController);
+app.get('/healthcheck', healthCheckController);
 
 app.use('/api', appRouter);
 app.use(globalErrorHandler);
 
-const EXPRESS_PORT = process.env.PORT || 3000;
 const start = (): void => {
   try {
-    app.listen(EXPRESS_PORT, () => {
-      console.info(`App is running on port ${EXPRESS_PORT}.`);
+    app.listen(PORT, () => {
+      logger.info(`App is running on port ${PORT}.`);
+      startMetricsServer();
     });
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error(error.message);
+      logger.error(error.message);
     } else {
-      console.error('An unknown error occurred');
+      logger.error('An unknown error occurred');
     }
     process.exit(1);
   }
@@ -71,7 +62,7 @@ start();
 declare global {
   namespace Express {
     interface Request {
-      user?: PublicUser;
+      user: PublicUser;
     }
   }
   var AppError: {

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { mongoIdRegex } from '../../utils/general.util';
+import { mongoIdRegex } from '../../utils/general.utils';
 
 export const createSchema = z.object({
   body: z.object({

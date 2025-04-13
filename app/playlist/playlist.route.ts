@@ -1,6 +1,6 @@
 import express from 'express';
 import controller from './playlist.controller';
-import { validate } from '../../middlewares/validate.middleware';
+import { validate } from '../../middlewares/validate.middlewares';
 import {
   createSchema,
   updateSchema,

@@ -6,9 +6,10 @@ import {
   getAllSchemaType,
   getSchemaType,
 } from './artist.schema';
-import db from '../../services/db.service';
+import db from '../../services/db.services';
 import { Artist, Prisma } from '@prisma/client';
 import { addChangeLogEntry } from '../changeLog/changeLog.service';
+import logger from '../../utils/logger';
 
 const createController = async (req: Request, res: Response) => {
   const body = req.body as createSchemaType['body'];
@@ -120,6 +121,7 @@ const getController = async (req: Request, res: Response) => {
 };
 
 const getAllController = async (req: Request, res: Response) => {
+
   const query = req.query as unknown as getAllSchemaType['query'];
   const limit = parseInt(query.limit as unknown as string, 10);
   const page = parseInt(query.page as unknown as string, 10);

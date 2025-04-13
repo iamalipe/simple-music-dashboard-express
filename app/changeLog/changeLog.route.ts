@@ -1,6 +1,6 @@
 import express from 'express';
 import controller from './changeLog.controller';
-import { validate } from '../../middlewares/validate.middleware';
+import { validate } from '../../middlewares/validate.middlewares';
 import { getSchema, getAllSchema } from './changeLog.schema';
 
 const router = express.Router();

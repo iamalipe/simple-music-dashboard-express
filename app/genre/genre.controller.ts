@@ -6,7 +6,7 @@ import {
   getAllSchemaType,
   getSchemaType,
 } from './genre.schema';
-import db from '../../services/db.service';
+import db from '../../services/db.services';
 import { Genre, Prisma } from '@prisma/client';
 import { addChangeLogEntry } from '../changeLog/changeLog.service';
 

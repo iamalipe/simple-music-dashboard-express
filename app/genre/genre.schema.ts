@@ -1,6 +1,9 @@
 import { z } from 'zod';
-import { mongoIdRegex } from '../../utils/general.util';
-import { paginationSchema, sortArraySchema } from '../../utils/validation.util';
+import { mongoIdRegex } from '../../utils/general.utils';
+import {
+  paginationSchema,
+  sortArraySchema,
+} from '../../utils/validation.utils';
 
 export const createSchema = z.object({
   body: z.object({

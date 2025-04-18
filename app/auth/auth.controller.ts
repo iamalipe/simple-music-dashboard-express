@@ -110,7 +110,19 @@ const loginController = async (req: Request, res: Response) => {
   res.status(200).json({ success: true, data: result });
 };
 
+const getCurrentUser = (req: Request, res: Response) => {
+  const user = req.user;
+
+  if (!user) {
+    res.sendStatus(401);
+    return;
+  }
+
+  res.status(200).json({ success: true, data: user });
+};
+
 export default {
   registerController,
   loginController,
+  getCurrentUser,
 };

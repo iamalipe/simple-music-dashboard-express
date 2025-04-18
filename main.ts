@@ -21,18 +21,18 @@ app.use(express.json());
 app.use(cookieParser());
 // app.set('trust proxy', true);
 
-app.use(cors());
-// const whitelist = process.env.WHITELISTED_DOMAINS
-//   ? process.env.WHITELISTED_DOMAINS.split(',')
-//   : [];
+// app.use(cors());
+const whitelist = process.env.WHITELISTED_DOMAINS
+  ? process.env.WHITELISTED_DOMAINS.split(',')
+  : [];
 
-// app.use(
-//   cors({
-//     origin: whitelist,
-//     methods: 'GET,PUT,POST,DELETE',
-//     credentials: true,
-//   }),
-// );
+app.use(
+  cors({
+    origin: whitelist,
+    methods: 'GET,PUT,POST,DELETE',
+    credentials: true,
+  }),
+);
 app.use(limiter);
 app.use(resTime);
 

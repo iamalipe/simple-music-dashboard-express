@@ -7,7 +7,7 @@ import {
   getSchemaType,
 } from './genre.schema';
 import db from '../../services/db.services';
-import { Genre, Prisma } from '../../prisma/prisma-client';
+import { Genre, Prisma } from '../../prisma-client';
 import { addChangeLogEntry } from '../changeLog/changeLog.service';
 
 const createController = async (req: Request, res: Response) => {

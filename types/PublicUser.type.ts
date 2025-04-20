@@ -1,3 +1,3 @@
-import { User } from '../prisma/prisma-client';
+import { User } from '../prisma-client';
 
 export type PublicUser = Omit<User, 'password'>;

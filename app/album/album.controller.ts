@@ -7,7 +7,7 @@ import {
   getSchemaType,
 } from './album.schema';
 import db from '../../services/db.services';
-import { Prisma } from '../../prisma/prisma-client';
+import { Prisma } from '../../prisma-client';
 import dayjs from 'dayjs';
 import { addChangeLogEntry } from '../changeLog/changeLog.service';
 

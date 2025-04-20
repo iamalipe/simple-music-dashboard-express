@@ -1,4 +1,4 @@
-import { Genre } from '../../prisma/prisma-client';
+import { Genre } from '../../prisma-client';
 import db from '../../services/db.services';
 
 const recordCreate = async (data: Genre) => {

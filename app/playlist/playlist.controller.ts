@@ -7,7 +7,7 @@ import {
   getSchemaType,
 } from './playlist.schema';
 import db from '../../services/db.services';
-import { Prisma } from '../../prisma/prisma-client';
+import { Prisma } from '../../prisma-client';
 
 const createController = async (req: Request, res: Response) => {
   const body = req.body as createSchemaType['body'];

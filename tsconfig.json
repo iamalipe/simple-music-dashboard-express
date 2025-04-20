@@ -10,7 +10,10 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    // "emitDeclarationOnly": true,
+    "noEmit": true
   },
   "exclude": ["node_modules", "prisma/prisma-client", "dist"]
 }

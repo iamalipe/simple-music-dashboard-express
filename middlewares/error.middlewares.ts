@@ -1,4 +1,4 @@
-import { Prisma } from '@prisma/client';
+import { Prisma } from '../prisma/prisma';
 import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
 import logger from '../utils/logger';

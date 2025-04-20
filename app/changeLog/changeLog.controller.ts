@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { getAllSchemaType, getSchemaType } from './changeLog.schema';
 import db from '../../services/db.services';
-import { Prisma } from '@prisma/client';
+import { Prisma } from '../../prisma/prisma';
 
 const getController = async (req: Request, res: Response) => {
   const params = req.params as getSchemaType['params'];

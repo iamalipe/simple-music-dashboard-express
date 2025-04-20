@@ -7,7 +7,7 @@ import {
   getSchemaType,
 } from './artist.schema';
 import db from '../../services/db.services';
-import { Artist, Prisma } from '@prisma/client';
+import { Artist, Prisma } from '../../prisma/prisma';
 import { addChangeLogEntry } from '../changeLog/changeLog.service';
 import logger from '../../utils/logger';
 

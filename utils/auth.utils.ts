@@ -6,7 +6,6 @@ import {
   REFRESH_TOKEN_EXPIRY,
   REFRESH_TOKEN_SECRET,
 } from '../config/default';
-import { User } from '@prisma/client';
 import db from '../services/db.services';
 import { PublicUser } from '../types/PublicUser.type';
 

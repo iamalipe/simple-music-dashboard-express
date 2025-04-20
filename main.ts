@@ -15,6 +15,7 @@ import { startMetricsServer } from './utils/metrics.utils';
 import { healthCheckController, rootController } from './app/app.controller';
 import { resTime } from './middlewares/resTime.middlewares';
 import logger from './utils/logger';
+import db from './services/db.services';
 
 const app = express();
 app.use(express.json());
@@ -45,15 +46,17 @@ app.use(globalErrorHandler);
 const start = (): void => {
   try {
     app.listen(PORT, () => {
-      logger.info(`App is running on port ${PORT}.`);
+      logger.info(`🟢 App is running on port ${PORT}.`);
+      db.$connect().then(() => logger.info('🟢 Database connected'));
       startMetricsServer();
     });
   } catch (error: unknown) {
     if (error instanceof Error) {
       logger.error(error.message);
     } else {
-      logger.error('An unknown error occurred');
+      logger.error('🔴 An unknown error occurred');
     }
+    db.$disconnect().then(() => logger.info('🔴 Database connection closed'));
     process.exit(1);
   }
 };

@@ -21,7 +21,7 @@ const app = express();
 app.use(compression());
 app.use(express.json());
 app.use(cookieParser());
-app.set('trust proxy', true);
+app.set('trust proxy', '127.0.0.1');
 
 app.use(
   cors({

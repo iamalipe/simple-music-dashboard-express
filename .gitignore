@@ -4,6 +4,7 @@
 /build
 /temp
 /upload
+/prisma/prisma-client
 
 # Logs
 logs

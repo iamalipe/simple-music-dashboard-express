@@ -1,20 +1,14 @@
+import { Genre } from '../../prisma/prisma';
 import db from '../../services/db.services';
 
-type Record = {
-  name: string;
-  originYear?: string;
-  description?: string;
-  popularInCountry?: string;
-};
-
-const recordCreate = async (data: Record) => {
+const recordCreate = async (data: Genre) => {
   const result = await db.genre.create({
     data: data,
   });
   return result;
 };
 
-const recordUpdate = async (id: string, data: Partial<Record>) => {
+const recordUpdate = async (id: string, data: Partial<Genre>) => {
   const updatedResult = await db.genre.update({
     where: {
       id: id,

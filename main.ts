@@ -1,16 +1,16 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
+import 'dotenv/config';
 import 'express-async-errors';
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import compression from 'compression';
 
 import type { PublicUser } from './types/PublicUser.type';
 import { globalErrorHandler } from './middlewares/error.middlewares';
 import './utils/appError.utils';
 import appRouter from './app/app.route';
 import { limiter } from './middlewares/limiter.middlewares';
-import { PORT } from './config/default';
+import { PORT, WHITELISTED_DOMAINS_ARRAY } from './config/default';
 import { startMetricsServer } from './utils/metrics.utils';
 import { healthCheckController, rootController } from './app/app.controller';
 import { resTime } from './middlewares/resTime.middlewares';
@@ -18,18 +18,14 @@ import logger from './utils/logger';
 import db from './services/db.services';
 
 const app = express();
+app.use(compression());
 app.use(express.json());
 app.use(cookieParser());
 // app.set('trust proxy', true);
 
-// app.use(cors());
-const whitelist = process.env.WHITELISTED_DOMAINS
-  ? process.env.WHITELISTED_DOMAINS.split(',')
-  : [];
-
 app.use(
   cors({
-    origin: whitelist,
+    origin: WHITELISTED_DOMAINS_ARRAY,
     methods: 'GET,PUT,POST,DELETE',
     credentials: true,
   }),
@@ -39,7 +35,6 @@ app.use(resTime);
 
 app.get('/', rootController);
 app.get('/healthcheck', healthCheckController);
-
 app.use('/api', appRouter);
 app.use(globalErrorHandler);
 

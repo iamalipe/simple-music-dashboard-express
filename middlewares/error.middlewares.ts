@@ -1,7 +1,7 @@
-import { Prisma } from '../prisma/prisma';
 import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
 import logger from '../utils/logger';
+import { Prisma } from '../prisma/prisma-client';
 
 /**
  * The globalErrorHandler function handles various types of errors, such as AppError, Zod validation

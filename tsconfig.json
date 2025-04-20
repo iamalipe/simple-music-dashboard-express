@@ -12,5 +12,5 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "exclude": ["node_modules", "prisma-client", "dist"]
+  "exclude": ["node_modules", "dist"]
 }

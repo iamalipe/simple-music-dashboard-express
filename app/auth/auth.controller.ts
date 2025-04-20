@@ -8,43 +8,33 @@ import {
   generateRefreshJWT,
 } from '../../utils/auth.utils';
 import { databaseResponseTimeHistogram } from '../../utils/metrics.utils';
+import {
+  createSession,
+  createUser,
+  getUserByEmail,
+  getUserById,
+} from './auth.service';
 
 const registerController = async (req: Request, res: Response) => {
   const body = req.body as registerSchemaType['body'];
 
   const passwordHash = await hashPassword(body.password);
-  const timer = databaseResponseTimeHistogram.startTimer();
-  const result = await db.user.create({
-    data: {
-      email: body.email,
-      password: passwordHash,
-    },
-    omit: {
-      password: true,
-    },
+  const result = await createUser({
+    email: body.email,
+    password: passwordHash,
   });
-  timer({ operation: 'register', success: 'true' });
 
   // Create token
-  const timer2 = databaseResponseTimeHistogram.startTimer();
-  const sessionInfo = await db.session.create({
-    data: {
-      userId: result.id,
-      expiresAt: new Date(), // FIXME expiresAt
-      valid: true,
-    },
-    include: {
-      user: {
-        omit: {
-          password: true,
-        },
-      },
-    },
+  // const timer2 = databaseResponseTimeHistogram.startTimer();
+  const sessionInfo = await createSession({
+    userId: result.id,
+    expiresAt: new Date(), // FIXME expiresAt
+    valid: true,
   });
-  timer2({ operation: 'session', success: 'true' });
 
+  const userInfo = await getUserById(result.id);
   const refreshToken = generateRefreshJWT({ id: sessionInfo.id });
-  const token = generateJWT(sessionInfo.user);
+  const token = generateJWT(userInfo!);
 
   // Set cookie
   res.cookie('access', token, {
@@ -60,14 +50,8 @@ const registerController = async (req: Request, res: Response) => {
 };
 const loginController = async (req: Request, res: Response) => {
   const body = req.body as loginSchemaType['body'];
-  const result = await db.user.findFirst({
-    where: {
-      email: {
-        contains: body.email,
-        mode: 'insensitive',
-      },
-    },
-  });
+
+  const result = await getUserByEmail(body.email);
 
   if (!result)
     throw new AppError('user not found', { status: 404, path: 'email' });
@@ -76,26 +60,15 @@ const loginController = async (req: Request, res: Response) => {
   const verifyResult = await comparePassword(result.password, body.password);
   if (!verifyResult) throw new Error('password is wrong');
 
-  // Create token
-  const timer2 = databaseResponseTimeHistogram.startTimer();
-  const sessionInfo = await db.session.create({
-    data: {
-      userId: result.id,
-      expiresAt: new Date(), // FIXME expiresAt
-      valid: true,
-    },
-    include: {
-      user: {
-        omit: {
-          password: true,
-        },
-      },
-    },
+  const sessionInfo = await createSession({
+    userId: result.id,
+    expiresAt: new Date(), // FIXME expiresAt
+    valid: true,
   });
-  timer2({ operation: 'session', success: 'true' });
+  const userInfo = await getUserById(result.id);
 
   const refreshToken = generateRefreshJWT({ id: sessionInfo.id });
-  const token = generateJWT(sessionInfo.user);
+  const token = generateJWT(userInfo!);
 
   // Set cookie
   res.cookie('access', token, {

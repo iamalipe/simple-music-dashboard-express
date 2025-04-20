@@ -1,7 +1,3 @@
-import { User } from '@prisma/client';
+import { UserTable } from './../drizzle/schema';
 
-export type PublicUser = Omit<User, 'password'>;
-// export type PublicUser = {
-//   id: string;
-//   email: string;
-// };
+export type PublicUser = Omit<typeof UserTable.$inferSelect, 'password'>;

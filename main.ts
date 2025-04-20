@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
+import 'dotenv/config';
+
 import 'express-async-errors';
 import express from 'express';
 import cors from 'cors';

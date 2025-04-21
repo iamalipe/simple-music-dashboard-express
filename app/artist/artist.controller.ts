@@ -9,7 +9,6 @@ import {
 import db from '../../services/db.services';
 import { Artist, Prisma } from '../../prisma-client';
 import { addChangeLogEntry } from '../changeLog/changeLog.service';
-import logger from '../../utils/logger';
 
 const createController = async (req: Request, res: Response) => {
   const body = req.body as createSchemaType['body'];
@@ -29,7 +28,13 @@ const createController = async (req: Request, res: Response) => {
     referenceId: result.id,
   });
 
-  res.status(201).json({ success: true, data: result });
+  res.status(201).json({
+    success: true,
+    data: result,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const updateController = async (req: Request, res: Response) => {
@@ -60,6 +65,9 @@ const updateController = async (req: Request, res: Response) => {
     changeLogKeys.push('imageUrl');
   }
 
+  if (Object.keys(updateValues).length === 0)
+    throw new AppError('no data to update', { status: 400 });
+
   const updatedResult = await db.artist.update({
     where: {
       id: params.id,
@@ -76,7 +84,13 @@ const updateController = async (req: Request, res: Response) => {
     referenceId: updatedResult.id,
   });
 
-  res.status(200).json({ success: true, data: updatedResult });
+  res.status(200).json({
+    success: true,
+    data: updatedResult,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const deleteController = async (req: Request, res: Response) => {
@@ -90,7 +104,7 @@ const deleteController = async (req: Request, res: Response) => {
 
   if (!findResult) throw new AppError('record not found', { status: 404 });
 
-  const result = await db.artist.delete({
+  const deletedResult = await db.artist.delete({
     where: {
       id: params.id,
     },
@@ -99,12 +113,18 @@ const deleteController = async (req: Request, res: Response) => {
   addChangeLogEntry({
     keys: ['name', 'bio', 'imageUrl'],
     module: 'artist',
-    title: `'${result.name}' Artist Deleted`,
-    newValue: result,
-    referenceId: result.id,
+    title: `'${deletedResult.name}' Artist Deleted`,
+    newValue: deletedResult,
+    referenceId: deletedResult.id,
   });
 
-  res.status(200).json({ success: true, data: result });
+  res.status(200).json({
+    success: true,
+    data: deletedResult,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const getController = async (req: Request, res: Response) => {
@@ -117,11 +137,16 @@ const getController = async (req: Request, res: Response) => {
 
   if (!result) throw new AppError('record not found', { status: 404 });
 
-  res.status(200).json({ success: true, data: result });
+  res.status(200).json({
+    success: true,
+    data: result,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const getAllController = async (req: Request, res: Response) => {
-
   const query = req.query as unknown as getAllSchemaType['query'];
   const limit = parseInt(query.limit as unknown as string, 10);
   const page = parseInt(query.page as unknown as string, 10);
@@ -159,7 +184,15 @@ const getAllController = async (req: Request, res: Response) => {
     current: result.length,
   };
 
-  res.status(200).json({ success: true, data: result, sort, pagination });
+  res.status(200).json({
+    success: true,
+    data: result,
+    sort,
+    pagination,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 export default {

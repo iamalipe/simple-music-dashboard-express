@@ -25,10 +25,14 @@ const registerController = async (req: Request, res: Response) => {
   });
   timer({ operation: 'register', success: 'true' });
 
+  const ip = req.headers['x-forwarded-for'] as string;
+  const userAgent = req.headers['user-agent'];
   // Create token
   const timer2 = databaseResponseTimeHistogram.startTimer();
   const sessionInfo = await db.session.create({
     data: {
+      ip,
+      userAgent,
       userId: result.id,
       expiresAt: new Date(), // FIXME expiresAt
       valid: true,
@@ -76,10 +80,14 @@ const loginController = async (req: Request, res: Response) => {
   const verifyResult = await comparePassword(result.password, body.password);
   if (!verifyResult) throw new Error('password is wrong');
 
+  const ip = req.headers['x-forwarded-for'] as string;
+  const userAgent = req.headers['user-agent'];
   // Create token
   const timer2 = databaseResponseTimeHistogram.startTimer();
   const sessionInfo = await db.session.create({
     data: {
+      ip,
+      userAgent,
       userId: result.id,
       expiresAt: new Date(), // FIXME expiresAt
       valid: true,

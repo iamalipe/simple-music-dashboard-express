@@ -33,7 +33,13 @@ const createController = async (req: Request, res: Response) => {
     referenceId: result.id,
   });
 
-  res.status(201).json({ success: true, data: result });
+  res.status(201).json({
+    success: true,
+    data: result,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const updateController = async (req: Request, res: Response) => {
@@ -77,6 +83,9 @@ const updateController = async (req: Request, res: Response) => {
     changeLogKeys.push('releaseDate');
   }
 
+  if (Object.keys(updateValues).length === 0)
+    throw new AppError('no data to update', { status: 400 });
+
   const updatedResult = await db.album.update({
     where: {
       id: params.id,
@@ -96,7 +105,13 @@ const updateController = async (req: Request, res: Response) => {
     referenceId: updatedResult.id,
   });
 
-  res.status(200).json({ success: true, data: updatedResult });
+  res.status(200).json({
+    success: true,
+    data: updatedResult,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const deleteController = async (req: Request, res: Response) => {
@@ -127,7 +142,13 @@ const deleteController = async (req: Request, res: Response) => {
     referenceId: deletedResult.id,
   });
 
-  res.status(200).json({ success: true, data: deletedResult });
+  res.status(200).json({
+    success: true,
+    data: deletedResult,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const getController = async (req: Request, res: Response) => {
@@ -140,7 +161,13 @@ const getController = async (req: Request, res: Response) => {
 
   if (!result) throw new AppError('record not found', { status: 404 });
 
-  res.status(200).json({ success: true, data: result });
+  res.status(200).json({
+    success: true,
+    data: result,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 const getAllController = async (req: Request, res: Response) => {
@@ -150,14 +177,17 @@ const getAllController = async (req: Request, res: Response) => {
   const skip = (page - 1) * limit;
 
   const filter: Prisma.AlbumWhereInput = {};
-  let orderBy: Prisma.AlbumOrderByWithRelationInput | undefined = undefined;
+  let orderBy: Prisma.AlbumOrderByWithRelationInput[] | undefined = undefined;
 
-  switch (query.orderBy) {
-    default:
-      orderBy = {
-        [query.orderBy]: query.order,
-      };
-      break;
+  if (query.sort.length > 0) {
+    orderBy = query.sort.map((sort) => {
+      switch (sort.orderBy) {
+        default:
+          return {
+            [sort.orderBy]: sort.order,
+          };
+      }
+    });
   }
 
   const result = await db.album.findMany({
@@ -169,10 +199,7 @@ const getAllController = async (req: Request, res: Response) => {
 
   const total = await db.album.count({ where: filter });
 
-  const sort = {
-    orderBy: query.orderBy,
-    order: query.order,
-  };
+  const sort = query.sort;
 
   const pagination = {
     page,
@@ -181,7 +208,15 @@ const getAllController = async (req: Request, res: Response) => {
     current: result.length,
   };
 
-  res.status(200).json({ success: true, data: result, sort, pagination });
+  res.status(200).json({
+    success: true,
+    data: result,
+    sort,
+    pagination,
+    errors: [],
+    timestamp: new Date().toISOString(),
+    message: 'success',
+  });
 };
 
 export default {
